@@ -40,8 +40,8 @@ class TestCard(unittest.TestCase):
         ### please note: normally unit test methods do not have return statements. But returning will allow for unit testing of your unit test, and allow you to check your answer with the autograder.  This is optional today.
 
         '''
-	c1 = hw5_cards.Card(0,12)
-	self.assertEqual(c1.rank_name,"Queen")
+        c1 = hw5_cards.Card(0,12)
+        self.assertEqual(c1.rank_name,"Queen")
         return c1.rank_name, "Queen"
 
     def test_q2(self):
@@ -57,7 +57,7 @@ class TestCard(unittest.TestCase):
 
         '''
         c2 = hw5_cards.Card(1,10)
-	self.AssertEqual(c2.suit_name,"Clubs")
+        self.assertEqual(c2.suit_name,"Clubs")
         return c2.suit_name, "Clubs"
 
     def test_q3(self):
@@ -73,7 +73,7 @@ class TestCard(unittest.TestCase):
 
         '''
         c3 = hw5_cards.Card(3,13)
-	self.Assert(str(c3),"King of Spades")
+        self.assertEqual(str(c3),"King of Spades")
         return str(c3), "King of Spades"
 
     def test_q4(self):
@@ -88,11 +88,9 @@ class TestCard(unittest.TestCase):
         ### please note: normally unit test methods do not have return statements. But returning will allow for unit testing of your unit test, and allow you to check your answer with the autograder.  This is optional today.
 
         '''
-	d1 = HW5_cards.Deck()
-        self.assertIsInstance(d1,list)
-	for x in length(d1)
-		self.assertIsInstance(d1[x],hw5_cards.Card)
-        return
+        d1 = hw5_cards.Deck()
+        self.assertNotEqual(len(d1.cards),0)
+        return len(d1.cards),0
 
     def test_q5(self):
         '''
@@ -106,9 +104,9 @@ class TestCard(unittest.TestCase):
         ### please note: normally unit test methods do not have return statements. But returning will allow for unit testing of your unit test, and allow you to check your answer with the autograder.  This is optional today.
 
         '''
-        d2 = HW5_cards.Deck()
-	self.assertIsInstance(d2.deal_card(),HW5_cards.Card)
-        return d2.deal_card(), HW5_cards.Card
+        d2 = hw5_cards.Deck()
+        self.assertIsInstance(d2.deal_card(),hw5_cards.Card)
+        return d2.deal_card(), hw5_cards.Card
 
     def test_q6(self):
         '''
@@ -123,11 +121,11 @@ class TestCard(unittest.TestCase):
         ### please note: normally unit test methods do not have return statements. But returning will allow for unit testing of your unit test, and allow you to check your answer with the autograder.  This is optional today.
 
         '''
-        d3 = HW5_cards.Deck()
-	n1 = len(d3)
-	d3.deal_card()
-	n2 = len(d3)
-	self.assertEqual(n1-1,n2)
+        d3 = hw5_cards.Deck()
+        n1 = len(d3.cards)
+        d3.deal_card()
+        n2 = len(d3.cards)
+        self.assertEqual(n1-1,n2)
         return n1-1, n2
 
 
@@ -143,12 +141,12 @@ class TestCard(unittest.TestCase):
         ### please note: normally unit test methods do not have return statements. But returning will allow for unit testing of your unit test, and allow you to check your answer with the autograder.  This is optional today.
 
         '''
-	d4 = HW5_cards.Deck()
-	c5 = d4.deal_card()
-	n1 = len(d4)
-	d4.replace_card(c5)
-	self.assertEqual(n1+1,len(d4))
-	return n1+1, len(d4)
+        d4 = hw5_cards.Deck()
+        c5 = d4.deal_card()
+        n1 = len(d4.cards)
+        d4.replace_card(c5)
+        self.assertEqual(n1+1,len(d4.cards))
+        return n1+1, len(d4.cards)
 
     def test_q8(self):
         '''
@@ -162,12 +160,12 @@ class TestCard(unittest.TestCase):
         ### please note: normally unit test methods do not have return statements. But returning will allow for unit testing of your unit test, and allow you to check your answer with the autograder.  This is optional today.
 
         '''
-        d5 = HW5_cards.Deck()
-	c1 = HW5_cards.Card(2,2)
-	n1 = len(d5)
-	d5.replac_card(c1)
-	self.assertEqual(n1,len(d5)
-        return n1, len(d5)
+        d5 = hw5_cards.Deck()
+        c1 = hw5_cards.Card(2,2)
+        n1 = len(d5.cards)
+        d5.replace_card(c1)
+        self.assertEqual(n1,len(d5.cards))
+        return n1, len(d5.cards)
 
 
 
